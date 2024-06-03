@@ -10,7 +10,7 @@ method="post"は、送信方法がPOSTリクエストであることを示して
  --%>
 <p>会員情報登録</p>
 
-<form action="/MemberInformation/MemberInformationServlet" method="post">
+<form action="/MemberInformation/memberInformationServlet" method="post">
 	<p>
 		■ユーザーID<br>　<input type="text" name="username">
 	</p>
