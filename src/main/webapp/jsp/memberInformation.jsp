@@ -77,8 +77,9 @@ method="post"は、送信方法がPOSTリクエストであることを示して
 		</select>
 	</p>
 	<p>
-		<input type="submit" value="登録">　<input type="submit"
-			value="リセット">　<input type="submit" value="戻る">
+		<input type="submit" name="regist" value="登録">
+		　<input type="submit" name="reset" value="リセット">
+		　<input type="submit" name="back" value="戻る">
 	</p>
 </form>
 
