@@ -32,56 +32,57 @@ public class MemberInformation extends HttpServlet {
 			String last_name = request.getParameter("last_name");
 			String first_name = request.getParameter("first_name");
 			String sexParam = request.getParameter("sex");
-            int sex = 0;
-            String birthYearParam = request.getParameter("birth_year");
-            int birth_year = 0;
-            String birthMonthParam = request.getParameter("birth_month");
-            int birth_month = 0;
-            String birthDayParam = request.getParameter("birth_day");
-            int birth_day = 0;
-            String phone_number = request.getParameter("phone_number");
-            String mail_address = request.getParameter("mail_address");
-            String jobParam = request.getParameter("job");
-            int job = 0;
-            
-            if ("男".equals(sexParam)) {
-                sex = 1;
-            } else if ("女".equals(sexParam)) {
-                sex = 2;
-            }
-            
-            try {
-                birth_year = Integer.parseInt(birthYearParam);
-            } catch (NumberFormatException e) {
-                return;
-            }
-            
-            try {
-                birth_month = Integer.parseInt(birthMonthParam);
-            } catch (NumberFormatException e) {
-                return;
-            }
-            
-            try {
-                birth_day = Integer.parseInt(birthDayParam);
-            } catch (NumberFormatException e) {
-                return;
-            }
-            
-            if ("officeworker".equals(jobParam)) {
-                job = 100;
-            } else if ("freelance".equals(jobParam)) {
-                job = 200;
-            } else if ("student".equals(jobParam)) {
-                job = 300;
-            } else if ("other".equals(jobParam)) {
-                job = 400;
-            } 
-            
+			int sex = 0;
+			String birthYearParam = request.getParameter("birth_year");
+			int birth_year = 0;
+			String birthMonthParam = request.getParameter("birth_month");
+			int birth_month = 0;
+			String birthDayParam = request.getParameter("birth_day");
+			int birth_day = 0;
+			String phone_number = request.getParameter("phone_number");
+			String mail_address = request.getParameter("mail_address");
+			String jobParam = request.getParameter("job");
+			int job = 0;
+
+			if ("男".equals(sexParam)) {
+				sex = 1;
+			} else if ("女".equals(sexParam)) {
+				sex = 2;
+			}
+
+			try {
+				birth_year = Integer.parseInt(birthYearParam);
+			} catch (NumberFormatException e) {
+				return;
+			}
+
+			try {
+				birth_month = Integer.parseInt(birthMonthParam);
+			} catch (NumberFormatException e) {
+				return;
+			}
+
+			try {
+				birth_day = Integer.parseInt(birthDayParam);
+			} catch (NumberFormatException e) {
+				return;
+			}
+
+			if ("officeworker".equals(jobParam)) {
+				job = 100;
+			} else if ("freelance".equals(jobParam)) {
+				job = 200;
+			} else if ("student".equals(jobParam)) {
+				job = 300;
+			} else if ("other".equals(jobParam)) {
+				job = 400;
+			}
+
 			/* SQLの生成、実行
 			 * "insert into product values (?)"の?に入れる値を指定する
 			 */
-			PreparedStatement st = con.prepareStatement("insert into MEMBER_INFO values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+			PreparedStatement st = con
+					.prepareStatement("insert into MEMBER_INFO values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			st.setString(1, username);
 			st.setString(2, password);
 			st.setString(3, last_name);
@@ -94,7 +95,6 @@ public class MemberInformation extends HttpServlet {
 			st.setString(10, mail_address);
 			st.setInt(11, job);
 			int line = st.executeUpdate();
-			
 
 			/* 結果の取得、処理
 			 * 一行でも追加できた場合
