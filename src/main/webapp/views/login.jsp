@@ -39,9 +39,9 @@ method="post"は、送信方法がPOSTリクエストであることを示して
 		<input type="submit" value="ログイン">
 	</p>
 	
-	<%-- <p>
-		<input type="submit" value="新規会員登録">
-	</p> --%>
+	<p>
+		<button id="navigateButton">新規会員登録</button>
+	</p>
 </form>
 
 <%@include file="../footer.html"%>

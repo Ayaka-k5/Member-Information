@@ -30,7 +30,8 @@
 			%>
 			<option value="<%=year%>"><%=year%></option>
 			<%}%>
-		</select>年<select name="birth_month">
+		</select>　年　
+		<select name="birth_month">
 			<%
 			int startMonth = 1;
 			int endMonth = 12;
@@ -38,7 +39,8 @@
 			%>
 			<option value="<%=month%>"><%=month%></option>
 			<%}%>
-		</select>月<select name="birth_day">
+		</select>　月　
+		<select name="birth_day">
 			<%
 			int startDay = 1;
 			int endDay = 31;
@@ -46,7 +48,7 @@
 			%>
 			<option value="<%=day%>"><%=day%></option>
 			<%}%>
-		</select>日
+		</select>　日
 	</p>
 
 	<p>
